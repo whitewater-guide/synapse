@@ -14,6 +14,8 @@ ENTRYPOINT [ "dockerize", \
     "/template/secrets.yaml:/config/secrets.yaml", \
     "-template", \
     "/template/whitewater.guide.signing.key:/config/whitewater.guide.signing.key", \
+    "-template", \
+    "/template/whitewater.guide.log.config:/config/whitewater.guide.log.config", \
     "-wait", \
     "tcp://db.local:5432", \
     "/start.py", \
