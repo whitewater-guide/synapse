@@ -1,0 +1,68 @@
+server_name: 'whitewater.guide'
+
+pid_file: /data/homeserver.pid
+
+presence:
+  enabled: false
+
+require_auth_for_profile_requests: true
+
+default_room_version: '6'
+
+listeners:
+  - port: 8008
+    tls: false
+    type: http
+    x_forwarded: true
+
+    resources:
+      - names: [client]
+        compress: false
+
+federation_domain_whitelist: []
+allow_profile_lookup_over_federation: false
+allow_device_name_lookup_over_federation: false
+
+log_config: '/config/whitewater.guide.log.config'
+
+media_store_path: '/data/media_store'
+
+enable_registration: false
+
+allow_guest_access: false
+
+auto_join_rooms:
+  - '#app:whitewater.guide'
+
+autocreate_auto_join_rooms: true
+
+enable_metrics: true
+
+report_stats: true
+
+signing_key_path: '/config/whitewater.guide.signing.key'
+
+trusted_key_servers: []
+
+password_config:
+  enabled: true
+
+user_directory:
+  enabled: false
+
+stats:
+  enabled: true
+
+enable_room_list_search: true
+
+alias_creation_rules:
+  - user_id: '*'
+    alias: '*'
+    room_id: '*'
+    action: allow
+
+room_list_publication_rules:
+  - user_id: '*'
+    alias: '*'
+    room_id: '*'
+    action: allow
