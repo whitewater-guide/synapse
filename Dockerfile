@@ -1,4 +1,4 @@
-FROM matrixdotorg/synapse:v1.52.0
+FROM matrixdotorg/synapse:v1.68.0
 
 ARG DOCKERIZE_VERSION=0.16.0
 
