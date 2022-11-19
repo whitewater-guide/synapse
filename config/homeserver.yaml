@@ -1,5 +1,3 @@
-server_name: 'whitewater.guide'
-
 pid_file: /data/homeserver.pid
 
 presence:
@@ -7,7 +5,7 @@ presence:
 
 require_auth_for_profile_requests: true
 
-default_room_version: '6'
+default_room_version: '9'
 
 listeners:
   - port: 8008
@@ -22,6 +20,7 @@ listeners:
 federation_domain_whitelist: []
 allow_profile_lookup_over_federation: false
 allow_device_name_lookup_over_federation: false
+allow_public_rooms_over_federation: false
 
 log_config: '/config/whitewater.guide.log.config'
 
@@ -30,6 +29,7 @@ media_store_path: '/data/media_store'
 enable_registration: false
 
 allow_guest_access: false
+allow_per_room_profiles: false
 
 auto_join_rooms:
   - '#app:whitewater.guide'
