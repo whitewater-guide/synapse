@@ -8,4 +8,6 @@ COPY --chown=991:991 ./config  /config
 COPY --chown=991:991 ./template  /template
 COPY --chown=991:991 start.sh .
 
+RUN mkdir -p /data && chown -R 991:991 /data
+
 ENTRYPOINT [ "./start.sh"]
