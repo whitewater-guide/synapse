@@ -6,22 +6,6 @@ RUN curl -sfL https://github.com/powerman/dockerize/releases/download/v${DOCKERI
 
 COPY --chown=991:991 ./config  /config
 COPY --chown=991:991 ./template  /template
+COPY --chown=991:991 start.sh .
 
-RUN ls -la /
-
-ENTRYPOINT [ "dockerize", \
-    "-template", \
-    "/template/secrets.yaml:/config/secrets.yaml", \
-    "-template", \
-    "/template/homeserver-env.yaml:/config/homeserver-env.yaml", \
-    "-template", \
-    "/template/whitewater.guide.signing.key:/config/whitewater.guide.signing.key", \
-    "-template", \
-    "/template/whitewater.guide.log.config:/config/whitewater.guide.log.config", \
-    "-wait", \
-    "tcp://db.local:5432", \
-    "/start.py", \
-    "run", \
-    "-c", \
-    "/config" \
-    ]
+ENTRYPOINT [ "./start.sh"]
