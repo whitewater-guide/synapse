@@ -31,9 +31,6 @@ enable_registration: false
 allow_guest_access: false
 allow_per_room_profiles: false
 
-auto_join_rooms:
-  - '#app:whitewater.guide'
-
 autocreate_auto_join_rooms: true
 
 enable_metrics: true

@@ -1,2 +1,6 @@
 server_name: {{ or .Env.SERVER_NAME "whitewater.guide" }}
 public_baseurl: {{ or .Env.PUBLIC_BASEURL "https://synapse.whitewater.guide/" }}
+
+auto_join_rooms:
+  - '#app:{{ or .Env.SERVER_NAME "whitewater.guide" }}'
+  
